@@ -1,0 +1,21 @@
+<p-panel class="box">
+<h2>Your Quiz submitted Successfully!</h2>
+
+<br>
+<br>
+
+<div>
+    <h2>Correct Answers are:</h2>
+    <ul>
+      <li *ngFor="let answer of selectedAnswers; let i = index">
+        Question {{ i + 1 }}: Answer {{ answer + 1 }}
+      </li>
+    </ul>
+</div>
+
+</p-panel>
+<br>
+
+<div class="home">
+<button pButton type="button" label="Back to Home" routerLink="" class="btn btn-primary"></button>
+</div>

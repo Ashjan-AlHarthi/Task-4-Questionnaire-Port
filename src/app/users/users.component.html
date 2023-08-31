@@ -1,0 +1,31 @@
+<div>
+  
+    <p-panel header="Questionnaire Port">
+      <ng-container *ngFor="let question of questions; let i = index">
+        <ng-container *ngIf="currentQuestionIndex === i">
+          <h3>Question {{ i + 1 }}:</h3>
+          <p>{{ question.text }}</p>
+          <div  *ngFor="let option of question.options; let j = index">
+          
+            <p-radioButton name="question{{ i }}" [(ngModel)]="selectedOptions[i]" [value]="j" (click)="onOptionSelected(i, j)"></p-radioButton>
+            <label> {{option}}</label>
+           
+          </div>
+
+          <br>
+          
+          <button pButton type="button" label="NEXT" [disabled]="!isOptionSelected[i]" (click)="nextQuestion()"></button>
+
+          <br>
+
+        </ng-container>
+      </ng-container>
+    </p-panel>
+
+
+    <div class="sub">
+      <br>
+      <button pButton type="button" label="SUBMIT" [disabled]="!isAllQuestionsAnswered()" (click)="handleSubmitButton()" class="btn btn-primary"></button>
+    </div>
+
+</div>

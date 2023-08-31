@@ -1,0 +1,17 @@
+
+<div class="card">
+    <p-menubar [model]="items"></p-menubar>
+</div>
+<br>
+<br>
+
+<div class="box">
+
+    <p-dropdown [options]="users" placeholder="Select a User" optionLabel="user" [(ngModel)]="selectedUser" [showClear]="true">  </p-dropdown>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button pButton type="button" label="NEXT" *ngIf="selectedUser !== ' '" (click)="handleButtonClick()" routerLink="/users"></button>
+    
+    </div>
+<router-outlet></router-outlet>

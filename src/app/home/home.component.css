@@ -1,0 +1,8 @@
+.box {
+    align-items: center;
+    align-content: center;
+    margin-left: 38%;
+    margin-top: 14%;
+}
+
+@import "primeicons/primeicons.css";
